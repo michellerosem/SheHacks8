@@ -2,6 +2,7 @@
 import { Platform } from 'react-native';
 import React from 'react';
 import { View, Button, StyleSheet, Linking, Alert } from 'react-native';
+import * as Location from 'expo-location';
 
 const MainPage = ({ navigation }) => {
     const handleCallFootPatrol = () => {
@@ -24,21 +25,28 @@ const MainPage = ({ navigation }) => {
           .catch(err => console.log(err));
       };
   
-const handleSendEmergencySMS = () => {
-    const phoneNumber = '2265591895';
-    const message = 'Test message please work T-T';
-    const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(message)}`;
-
-    Linking.canOpenURL(smsLink)
-      .then(supported => {
-        if (!supported) {
-          Alert.alert('Unable to send SMS message');
-        } else {
-          return Linking.openURL(smsLink);
+      const handleSendEmergencySMS = async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+            Alert.alert('Permission to access location was denied');
+            return;
         }
-      })
-      .catch(err => console.log(err));
-  };
+
+        let location = await Location.getCurrentPositionAsync({});
+        const message = `Assistance needed at my location. Lat: ${location.coords.latitude}, Lon: ${location.coords.longitude}. Feeling unsafe. Please help or alert authorities.`;
+        const phoneNumber = '2265591895';
+        const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(message)}`;
+
+        Linking.canOpenURL(smsLink)
+          .then(supported => {
+            if (!supported) {
+              Alert.alert('Unable to send SMS message');
+            } else {
+              return Linking.openURL(smsLink);
+            }
+          })
+          .catch(err => console.log(err));
+    };
 
   return (
     <View style={styles.container}>
