@@ -5,10 +5,16 @@ const AccountInfo = () => {
     const [emergencyContacts, setEmergencyContacts] = useState([]);
     const [homeAddress, setHomeAddress] = useState('');
     const [carModel, setCarModel] = useState('');
+    const [carLocation, setCarLocation] = useState('');
 
     //adds new emergency contact
     const addEmergencyContact = (contact) => {
         setEmergencyContacts([...emergencyContacts, contact]);
+      };
+
+      const handleSetLocation = () => {
+        // Save carLocation to some storage (e.g., AsyncStorage, Redux, etc.)
+        setCarLocation(carLocation);
       };
 
     //JFX
@@ -39,6 +45,13 @@ const AccountInfo = () => {
             style={styles.input}
             placeholder="Enter Car Model"
             onChangeText={(text) => setCarModel(text)}
+            />
+
+            <Text style={styles.subHeader}>Car Location: {carLocation}</Text>
+            <TextInput style={styles.input}
+            placeholder="Enter Car location"
+            value={carLocation}
+            onChangeText={setCarLocation}
             />
 
             <Button title="Save" onPress={() => console.log('Save button pressed')} />
