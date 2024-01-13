@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AccountInfo from './AccountInfo'; //Connects to AccountInfo.js file
 import LoginScreen from './LoginScreen';
-
+import Navigate from './Navigate';
+import MainPage from './MainPage';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -13,7 +14,9 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Account Info" component={AccountInfo} />
-        
+        <Stack.Screen name="Navigate" component={Navigate} /> 
+        <Stack.Screen name="MainPage" component={MainPage} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
