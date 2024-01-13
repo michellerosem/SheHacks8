@@ -4,6 +4,7 @@ import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-nat
 const AccountInfo = () => {
     const [emergencyContacts, setEmergencyContacts] = useState([]);
     const [homeAddress, setHomeAddress] = useState('');
+    const [carModel, setCarModel] = useState('');
 
     //adds new emergency contact
     const addEmergencyContact = (contact) => {
