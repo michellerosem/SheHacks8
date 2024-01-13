@@ -1,5 +1,4 @@
 // MainPage.js
-
 import { Platform } from 'react-native';
 import React from 'react';
 import { View, Button, StyleSheet, Linking, Alert } from 'react-native';
@@ -34,7 +33,7 @@ const MainPage = ({ navigation }) => {
       />
       <Button
         title="Account"
-        onPress={() => navigation.navigate('Account')}
+        onPress={() => navigation.navigate('Account Info')} // Use the correct route name here
       />
       <Button
         title="Emergency Contacts"
