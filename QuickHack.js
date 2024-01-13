@@ -9,7 +9,7 @@ const QuickHack = () => {
     // Call to ChatGPT API goes here
     // This is a placeholder for the API call
     // Replace it with your actual API call logic
-    const response = await fetch('YOUR_CHATGPT_API_ENDPOINT', {
+    const response = await fetch('https://api.openai.com/v1/engines/gpt-4.0-turbo/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
