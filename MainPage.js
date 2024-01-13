@@ -55,6 +55,10 @@ const MainPage = ({ navigation }) => {
         onPress={handleCallFootPatrol}
       />
       <Button
+        title="Quick Question"
+        onPress={() => navigation.navigate('QuickQuestion')}
+      />
+      <Button
         title="Quick Hack Question"
         onPress={() => navigation.navigate('QuickHack')}
       />
