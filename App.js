@@ -10,6 +10,7 @@ import Navigate from './Navigate';
 import MainPage from './MainPage';
 import ClassPage from './ClassPage';
 import CarPage from './CarPage';
+import QuickQuestion from './QuickQuestion'; 
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Stack.Screen name="MainPage" component={MainPage} />
         <Stack.Screen name="ClassPage" component={ClassPage} />
         <Stack.Screen name="CarPage" component={CarPage} />
+        <Stack.Screen name="QuickQuestion" component={QuickQuestion} />
 
 
       </Stack.Navigator>
