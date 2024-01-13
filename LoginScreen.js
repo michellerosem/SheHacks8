@@ -6,11 +6,10 @@ const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
- const handleLogin = () => {
-  // For the prototype, we assume the credentials are always correct.
-  // So, we directly navigate to the 'Account Info' screen.
-  navigation.navigate('Account Info');
-};
+  const handleLogin = () => {
+    // Navigate to the 'MainPage' screen
+    navigation.navigate('MainPage');
+  };
 
   return (
     <View style={styles.container}>
