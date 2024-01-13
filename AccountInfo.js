@@ -5,11 +5,13 @@ const AccountInfo = () => {
     const [emergencyContacts, setEmergencyContacts] = useState([]);
     const [homeAddress, setHomeAddress] = useState('');
 
+    //adds new emergency contact
     const addEmergencyContact = (contact) => {
         setEmergencyContacts([...emergencyContacts, contact]);
       };
 
-    return (
+    //JFX
+    return ( 
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.header}> Account Info </Text>
 
@@ -36,6 +38,7 @@ const AccountInfo = () => {
     );
 };
 
+//css styles
 const styles = StyleSheet.create({
     container: {
       padding: 20,
