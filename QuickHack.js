@@ -1,8 +1,5 @@
-import { AppRegistry } from 'react-native';
-import QuickHack from './path-to-your-component/QuickHack'; // Update the path accordingly
-import { name as appName } from './app.json';
-
-AppRegistry.registerComponent(appName, () => QuickHack);
+import React, { useState } from 'react';
+import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
 const handleAskQuestion = async () => {
     try {
