@@ -10,7 +10,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="AccountInfo" component={AccountInfo} />
+        <Stack.Screen name="Account Info" component={AccountInfo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
