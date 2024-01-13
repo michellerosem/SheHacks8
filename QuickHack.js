@@ -27,7 +27,7 @@ const handleAskQuestion = async () => {
       console.error('There was an error asking the question:', error);
       setAnswer('Failed to get an answer. Please try again.');
     }
-  };
+  
   
   return (
     <View style={styles.container}>
