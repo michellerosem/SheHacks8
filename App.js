@@ -6,7 +6,7 @@ import AccountInfo from './AccountInfo'; //Connects to AccountInfo.js file
 import LoginScreen from './LoginScreen';
 import Navigate from './Navigate';
 import MainPage from './MainPage';
-import Map from '.Map.js';
+import ClassPage from './ClassPage';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -17,6 +17,7 @@ const App = () => {
         <Stack.Screen name="Account Info" component={AccountInfo} />
         <Stack.Screen name="Navigate" component={Navigate} /> 
         <Stack.Screen name="MainPage" component={MainPage} />
+        <Stack.Screen name="ClassPage" component={ClassPage} />
 
       </Stack.Navigator>
     </NavigationContainer>

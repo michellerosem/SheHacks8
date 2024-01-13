@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 
+
 const Navigate = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -19,7 +20,7 @@ const Navigate = ({ navigation }) => {
       />
       <Button
         title="Class"
-        onPress={() => console.log('Class pressed')}
+        onPress={() => navigation.navigate('ClassPage')}
       />
     </View>
   );
