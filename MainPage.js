@@ -23,7 +23,22 @@ const MainPage = ({ navigation }) => {
           })
           .catch(err => console.log(err));
       };
-      
+  
+const handleSendEmergencySMS = () => {
+    const phoneNumber = '2265591895';
+    const message = 'Test message please work T-T';
+    const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(message)}`;
+
+    Linking.canOpenURL(smsLink)
+      .then(supported => {
+        if (!supported) {
+          Alert.alert('Unable to send SMS message');
+        } else {
+          return Linking.openURL(smsLink);
+        }
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <View style={styles.container}>
@@ -37,7 +52,7 @@ const MainPage = ({ navigation }) => {
       />
       <Button
         title="Emergency Contacts"
-        onPress={() => navigation.navigate('EmergencyContacts')}
+        onPress={handleSendEmergencySMS}
       />
       <Button
         title="Navigate"
@@ -46,6 +61,7 @@ const MainPage = ({ navigation }) => {
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
