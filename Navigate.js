@@ -22,6 +22,11 @@ const Navigate = ({ navigation }) => {
         title="Class"
         onPress={() => navigation.navigate('ClassPage')}
       />
+
+        <Button
+        title="Car"
+        onPress={() => navigation.navigate('CarPage')}
+      />
     </View>
   );
 };
