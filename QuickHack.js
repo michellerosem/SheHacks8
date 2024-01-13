@@ -1,27 +1,34 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
-const QuickHack = () => {
-  const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
-
-  const handleAskQuestion = async () => {
-    // Call to ChatGPT API goes here
-    // This is a placeholder for the API call
-    // Replace it with your actual API call logic
-    const response = await fetch('https://api.openai.com/v1/engines/gpt-4.0-turbo/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer sk-...3zYW'
-      },
-      body: JSON.stringify({ prompt: question, max_tokens: 50 })
-    });
-
-    const data = await response.json();
-    setAnswer(data.choices[0].text);
+const handleAskQuestion = async () => {
+    try {
+      const response = await fetch('https://api.openai.com/v1/engines/gpt-4.0-turbo/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer sk-...3zYW'
+        },
+        body: JSON.stringify({ prompt: question, max_tokens: 50 })
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+  
+      const data = await response.json();
+  
+      if (data.choices && data.choices.length > 0 && data.choices[0].text) {
+        setAnswer(data.choices[0].text);
+      } else {
+        setAnswer('No response from GPT-4.');
+      }
+    } catch (error) {
+      console.error('There was an error asking the question:', error);
+      setAnswer('Failed to get an answer. Please try again.');
+    }
   };
-
+  
   return (
     <View style={styles.container}>
       <TextInput
