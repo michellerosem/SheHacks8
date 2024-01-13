@@ -6,6 +6,7 @@ import AccountInfo from './AccountInfo'; //Connects to AccountInfo.js file
 import LoginScreen from './LoginScreen';
 import Navigate from './Navigate';
 import MainPage from './MainPage';
+import Map from '.Map.js';
 const Stack = createStackNavigator();
 
 const App = () => {
