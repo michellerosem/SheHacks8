@@ -34,6 +34,13 @@ const AccountInfo = () => {
             onChangeText={(text) => setHomeAddress(text)}
             />
 
+            <Text style={styles.subHeader}>Car Model: {carModel}</Text>
+            <TextInput
+            style={styles.input}
+            placeholder="Enter Car Model"
+            onChangeText={(text) => setCarModel(text)}
+            />
+
             <Button title="Save" onPress={() => console.log('Save button pressed')} />
         </ScrollView>
     );
