@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import AccountInfo from './AccountInfo'; //Connects to AccountInfo.js file
+import AccountInfo from './AccountInfo'; 
 import LoginScreen from './LoginScreen';
 import Navigate from './Navigate';
 import MainPage from './MainPage';
