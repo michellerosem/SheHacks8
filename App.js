@@ -9,7 +9,6 @@ import LoginScreen from './LoginScreen';
 import Navigate from './Navigate';
 import MainPage from './MainPage';
 import ClassPage from './ClassPage';
-import QuickHack from './QuickHack';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
         <Stack.Screen name="Navigate" component={Navigate} /> 
         <Stack.Screen name="MainPage" component={MainPage} />
         <Stack.Screen name="ClassPage" component={ClassPage} />
-      <Stack.Screen name="QuickHack" component={QuickHack} /> 
 
 
       </Stack.Navigator>
