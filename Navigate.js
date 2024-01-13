@@ -5,14 +5,14 @@ import { View, Button, StyleSheet } from 'react-native';
 const Navigate = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Button
+      {/* <Button
         title="Call Foot Patrol"
         onPress={() => console.log('Call Foot Patrol pressed')}
-      />
-      <Button
+      /> */}
+      {/* <Button
         title="Contact Emergency"
         onPress={() => console.log('Contact Emergency pressed')}
-      />
+      /> */}
       <Button
         title="Home"
         onPress={() => console.log('Home pressed')}
