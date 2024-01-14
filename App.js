@@ -11,7 +11,7 @@ import MainPage from './MainPage';
 import ClassPage from './ClassPage';
 import CarPage from './CarPage';
 import QuickQuestion from './QuickQuestion'; 
-import QuickQuestion from './Hospital'; 
+import Hospital from './Hospital'; 
 const Stack = createStackNavigator();
 
 const App = () => {
