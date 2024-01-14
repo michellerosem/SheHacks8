@@ -1,6 +1,5 @@
-// LoginScreen.js
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, StatusBar } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -13,6 +12,11 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <TextInput
         style={styles.input}
         placeholder="Username"
