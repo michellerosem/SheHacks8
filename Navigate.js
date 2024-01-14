@@ -11,6 +11,7 @@ const Navigate = ({ navigation }) => {
         ios: `maps:0,0?q=${address}`,
         android: `geo:0,0?q=${address}`
       });
+      
       // Open the URL
       Linking.openURL(url);
     };
