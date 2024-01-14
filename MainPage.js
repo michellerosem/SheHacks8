@@ -58,10 +58,10 @@ const MainPage = ({ navigation }) => {
         title="Quick Question"
         onPress={() => navigation.navigate('QuickQuestion')}
       />
-      <Button
+      {/* <Button
         title="Quick Hack Question"
         onPress={() => navigation.navigate('QuickHack')}
-      />
+      /> */}
       <Button
         title="Account"
         onPress={() => navigation.navigate('Account Info')} // Use the correct route name here
