@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
-import React, { useState } from 'react';
 import { View, Button, StyleSheet, Alert, Linking, Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker'; // Import expo-image-picker
 
 const ClassPage = ({ navigation }) => {
   const [classes, setClasses] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null);
-  
+  const [selectedImage, setSelectedImage] = useState(null); // State for the selected image
+
   const handleAddClass = () => {
     // Prompt for the class title
     Alert.prompt(
@@ -48,14 +46,9 @@ const ClassPage = ({ navigation }) => {
 
   const openLocation = (location) => {
     const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
-    Linking.canOpenURL(url).then(supported => {
-      if (supported) {
-        Linking.openURL(url);
-      } else {
-        console.log("Don't know how to open this URL: " + url);
-      }
-    });
+    Linking.openURL(url).catch(err => console.error("An error occurred", err));
   };
+
   const handlePickImage = async () => {
     // Request permission to access the photo library
     const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -84,31 +77,31 @@ const ClassPage = ({ navigation }) => {
         />
       ))}
       <Button title="Add Class" onPress={handleAddClass} />
-      <Button title="Upload Schedule" onPress={handlePickImage} /> {/* New button for uploading images */}
-      {selectedImage && <Image source={{ uri: selectedImage.localUri }} style={styles.image} />} {/* Display the selected image */}
+      <Button title="Upload Schedule" onPress={handlePickImage} />
+      {selectedImage && (
+        <Image source={{ uri: selectedImage.localUri }} style={styles.image} />
+      )}
     </View>
   );
 };
 
-
-
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-    },
-    button: {
-      marginBottom: 20,
-      width: '100%',
-    },
-    image: { // Style for the image
-      width: 300, // or the size you need
-      height: 200, // or the size you need
-      resizeMode: 'contain',
-      marginTop: 20,
-    },
-  });
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  button: {
+    marginBottom: 20,
+    width: '100%',
+  },
+  image: {
+    width: 300,
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: 20,
+  },
+});
 
 export default ClassPage;
