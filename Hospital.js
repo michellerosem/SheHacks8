@@ -1,61 +1,40 @@
-import React, { useState, useEffect } from 'react';
+// Hospital.js
+import React, { useState } from 'react';
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 import * as Location from 'expo-location';
 
 const Hospital = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
 
-  useEffect(() => {
-    requestLocationPermission();
-  }, []);
-
-  const requestLocationPermission = async () => {
+  const requestLocationAndFindHospital = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
-    if (status === 'granted') {
-      getCurrentLocation();
-    } else {
-      Alert.alert('Permission Required', 'Location permission is required to find the nearest hospital.');
-    }
-  };
-
-  const getCurrentLocation = async () => {
-    try {
-      let location = await Location.getCurrentPositionAsync({});
-      setCurrentLocation(location);
-    } catch (err) {
-      Alert.alert('Error', 'Unable to obtain current location.');
-      console.error(err);
-    }
-  };
-
-  const openHospital = async () => {
-    if (!currentLocation) {
-      await requestLocationPermission();
+    if (status !== 'granted') {
+      Alert.alert('Permission Denied', 'Allow the app to use location service.');
       return;
     }
+    let location = await Location.getCurrentPositionAsync({});
+    setCurrentLocation(location);
+    openHospital(location);
+  };
 
-    const { latitude, longitude } = currentLocation.coords;
-    const hospitalUrl = `https://www.google.com/maps/search/?api=1&query=hospitals&ll=${latitude},${longitude}`;
-    Linking.openURL(hospitalUrl).catch(err => {
-      console.error("Failed to open URL: ", err);
-      Alert.alert('Error', 'Failed to open map.');
-    });
+  const openHospital = (location) => {
+    if (location) {
+      const { latitude, longitude } = location.coords;
+      const hospitalUrl = `https://www.google.com/maps/search/?api=1&query=hospitals&ll=${latitude},${longitude}`;
+      Linking.openURL(hospitalUrl).catch(err => {
+        console.error("Failed to open URL: ", err);
+        Alert.alert('Error', 'Failed to open map.');
+      });
+    } else {
+      Alert.alert('Location not available', 'Current location not available.');
+    }
   };
 
   return (
-    <View style={styles.container}>
-      <Button title="Find Nearest Hospital" onPress={openHospital} />
+    <View>
+      <Button title="Find Nearest Hospital" onPress={requestLocationAndFindHospital} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20
-  }
-});
 
 export default Hospital;
