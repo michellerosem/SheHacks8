@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+/*import React, { useState } from 'react';
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 import * as Location from 'expo-location';
 
@@ -55,3 +56,4 @@ const styles = StyleSheet.create({
   });
   
   export default Hospital;
+  */
