@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
+import Logo from './upload.jpg';
 
 const CarPage = () => {
     const carLocation = {
