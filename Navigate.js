@@ -1,6 +1,7 @@
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 import * as Location from 'expo-location';
 import { useNavigation } from '@react-navigation/native';
+import { useState, useEffect } from 'react';
 
 //import StudySpot from './StudySpot';
 
