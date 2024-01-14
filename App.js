@@ -24,6 +24,7 @@ const App = () => {
         <Stack.Screen name="ClassPage" component={ClassPage} />
         <Stack.Screen name="CarPage" component={CarPage} />
         <Stack.Screen name="QuickQuestion" component={QuickQuestion} />
+      
 
 
       </Stack.Navigator>

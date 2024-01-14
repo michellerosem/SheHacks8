@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, Alert, Linking } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 const CarPage = ({ carLocation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.subHeader}>Car Location: {carLocation.text}</Text>
+      <Text style={styles.subHeader}>Car Location: Huron Flats</Text>
     </View>
   );
 };
