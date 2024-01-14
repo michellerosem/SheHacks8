@@ -10,7 +10,6 @@ import MainPage from './MainPage';
 import ClassPage from './ClassPage';
 import CarPage from './CarPage';
 import QuickQuestion from './QuickQuestion'; 
-import Hospital from './Hospital'; // Make sure this import is correct
 
 const Stack = createStackNavigator();
 
@@ -25,10 +24,11 @@ const App = () => {
         <Stack.Screen name="ClassPage" component={ClassPage} />
         <Stack.Screen name="CarPage" component={CarPage} />
         <Stack.Screen name="QuickQuestion" component={QuickQuestion} />
-        <Stack.Screen name="Hospital" component={Hospital} />
+        {/* <Stack.Screen name="Hospital" component={Hospital} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
+
