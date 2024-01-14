@@ -3,8 +3,8 @@ import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 
 const CarPage = () => {
     const carLocation = {
-        latitude: 43.0017, // Example latitude
-        longitude: 81.2732, // Example longitude
+        latitude: 43.002250, // Example latitude
+        longitude: -81.275700, // Example longitude
       };
     const openCarLocation = () => {
         if (carLocation && carLocation.latitude && carLocation.longitude) {
