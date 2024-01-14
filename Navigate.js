@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Hospital from './Hospital'; // Import the Hospital component
+//import Hospital from './Hospital'; // Import the Hospital component
 
 const Navigate = () => {
   const navigation = useNavigation();
