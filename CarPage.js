@@ -6,8 +6,8 @@ const CarPage = () => {
         latitude: 43.0017, // Example latitude
         longitude: 81.2732, // Example longitude
       };
-  const openCarLocation = () => {
-    if (carLocation && carLocation.latitude && carLocation.longitude) {
+    const openCarLocation = () => {
+        if (carLocation && carLocation.latitude && carLocation.longitude) {
       const url = `https://www.google.com/maps/search/?api=1&query=${carLocation.latitude},${carLocation.longitude}`;
       Linking.canOpenURL(url).then(supported => {
         if (supported) {
