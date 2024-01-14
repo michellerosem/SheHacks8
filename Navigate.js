@@ -56,7 +56,8 @@ const Navigate = () => {
       <Button title="Class" onPress={() => navigation.navigate('ClassPage')} />
       <Button title="Car" onPress={() => navigation.navigate('CarPage')} />
       <Button title="Hospital" onPress={openHospital} />
-    </View>
+      <Button title="Study Spots" onPress={openStudySpots}/>
+    </View> 
   );
 };
 
