@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import { View, Button, StyleSheet, Alert, Linking } from 'react-native';
 import * as Location from 'expo-location';
 import { useNavigation } from '@react-navigation/native';
-import StudySpot from './StudySpot';
+
+//import StudySpot from './StudySpot';
+
 //import StudySpot from './StudySpot';
 
 const Navigate = () => {
@@ -14,11 +15,6 @@ const Navigate = () => {
     longitude: -81.273734,
   };
 
-  const studySpots = [
-    { spotName: 'Library', address: '123 Main St, Cityville' },
-    { spotName: 'Coffee Shop', address: '456 Oak St, Townsville' },
-    { spotName: 'Quiet Park', address: '789 Pine St, Villagetown' },
-  ];
   // const studySpots = [
   //   { spotName: 'Library', address: '123 Main St, Cityville' },
   //   { spotName: 'Coffee Shop', address: '456 Oak St, Townsville' },
