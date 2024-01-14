@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { View, Button, StyleSheet, Alert, Linking, Image } from 'react-native';
 import * as ImagePicker from 'expo-image-picker'; // Import expo-image-picker
 
@@ -10,7 +10,7 @@ const ClassPage = ({ navigation }) => {
     // Prompt for the class title
     Alert.prompt(
       'Enter Class Title',
-      '',
+      '',1                                                
       [
         {
           text: 'Cancel',
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ClassPage;
+export default ClassPage;*/
