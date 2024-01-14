@@ -50,7 +50,7 @@ const AccountInfo = () => {
             <Text style={styles.subHeader}>Car Location: {carLocation}</Text>
             <TextInput style={styles.input}
             placeholder="Enter Car location"
-            value={carLocation}
+            //value={carLocation}
             onChangeText={setCarLocation}
             />
 
